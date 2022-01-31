@@ -1,0 +1,24 @@
+{
+  "GENERAL.EMAIL_EXISTS": "This email already exists",
+  "GENERAL.IMAGE_REQUIRED": "Image is required",
+  "GENERAL.SOMETHING_WRONG": "Something went wrong",
+  "GENERAL.CONGRATULATIONS": "Congratulations!!",
+  "GENERAL.EMAIL_SENT": "Email sent successfully",
+  "GENERAL.RECORD_DELETED": "Record deleted successfully",
+  "GENERAL.TITLE_ARLEADY_EXISTS": "Title already exists",
+
+  "GENERAL.ROUTE_NOT_FOUND": "Route Not Found",
+  "GENERAL.WELCOME": "Welcome To API",
+  "GENERAL.IS_DUPLICATE": "is Duplicate",
+  "GENERAL.INVALID_INPUT": "Invalid Input",
+  "GENERAL.INVALID_ID": "Invalid Id",
+
+  "USER.LOGIN_SUCCESS": "Login successful",
+  "USER.USER_NOT_FOUND": "User not found",
+  "USER.PASSWORD_CHANGED": "Your password has been changed",
+  "USER.CREATED": "User created successfully",
+  "USER.INVALID_EMAIL": "Invalid email address",
+  "USER.DELETED": "User deleted successfully",
+  "USER.CHANGED": "Your profile has been updated",
+  "USER.UPDATED": "User Details Updated"
+}

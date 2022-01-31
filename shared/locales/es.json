@@ -1,0 +1,25 @@
+{
+  "GENERAL.EMAIL_EXISTS": "Este email ya existe",
+  "GENERAL.IMAGE_REQUIRED": "Imagen es necesaria",
+  "GENERAL.SOMETHING_WRONG": "Se ha producido un error",
+  "GENERAL.CONGRATULATIONS": "Felicidades!!",
+  "GENERAL.EMAIL_SENT": " El email se ha enviado correctamente",
+  "GENERAL.RECORD_DELETED": "Registro eliminado con éxito",
+  "GENERAL.TITLE_ARLEADY_EXISTS": "El título ya existe",
+
+  "GENERAL.ROUTE_NOT_FOUND": "Ruta no encontrada",
+  "GENERAL.WELCOME": "Bienvenido a API",
+  "GENERAL.IS_DUPLICATE": "Es duplicado",
+  "GENERAL.INVALID_INPUT": "Entrada inválida",
+  "GENERAL.INVALID_ID": "Identificación invalida",
+
+  "USER.LOGIN_SUCCESS": "Acceso correcto",
+  "USER.SOMETHING_WRONG": "Se ha producido un error",
+  "USER.USER_NOT_FOUND": "Usuario no encontrado",
+  "USER.PASSWORD_CHANGED": "Su contraseña ha sido modificada",
+  "USER.CREATED": "Usuario creado correctamente",
+  "USER.INVALID_EMAIL": "Email no válido",
+  "USER.DELETED": "Usuario eliminado correctamente",
+  "USER.CHANGED": "Su perfil ha sido actualizado correctamente",
+  "USER.UPDATED": "Detalles del usuario actualizados"
+}
