@@ -46,12 +46,12 @@ app.use(limiter());
 app.use(log_saver());
 
 app.all("/", welcome);
-// app.use("/api/v1", rootRouter);
+app.use("/api/v1", rootRouter);
 
 app.use(errorHandler);
 app.use(routeNotFound);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
   console.log("Server Running at port: " + port);

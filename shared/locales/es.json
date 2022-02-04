@@ -14,6 +14,7 @@
   "GENERAL.INVALID_ID": "Identificación invalida",
 
   "USER.LOGIN_SUCCESS": "Acceso correcto",
+  "USER.SIGNUP_SUCCESS": "Registro exitoso",
   "USER.SOMETHING_WRONG": "Se ha producido un error",
   "USER.USER_NOT_FOUND": "Usuario no encontrado",
   "USER.PASSWORD_CHANGED": "Su contraseña ha sido modificada",
