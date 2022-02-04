@@ -15,12 +15,14 @@
 
   "USER.LOGIN_SUCCESS": "Acceso correcto",
   "USER.SIGNUP_SUCCESS": "Registro exitoso",
-  "USER.SOMETHING_WRONG": "Se ha producido un error",
   "USER.USER_NOT_FOUND": "Usuario no encontrado",
   "USER.PASSWORD_CHANGED": "Su contraseña ha sido modificada",
   "USER.CREATED": "Usuario creado correctamente",
   "USER.INVALID_EMAIL": "Email no válido",
   "USER.DELETED": "Usuario eliminado correctamente",
   "USER.CHANGED": "Su perfil ha sido actualizado correctamente",
-  "USER.UPDATED": "Detalles del usuario actualizados"
+  "USER.UPDATED": "Detalles del usuario actualizados",
+
+  "RESTAURANT.CREATED": "Restaurante creado con éxito",
+  "RESTAURANT.NOT_FOUND": "Restaurante no encontrado"
 }
