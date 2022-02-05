@@ -19,7 +19,7 @@ const welcome = (req, res) => {
 };
 
 const errorHandler = (error, req, res, next) => {
-  console.log("Error ", error);
+  // console.log("Error ", error);
   console.log("Error Name", error.name);
   switch (error.name) {
     case "MongoServerError": // Or MongoError

@@ -7,6 +7,8 @@ const { Restaurant, validateRestaurant } = rfr("/models"),
 exports.getRestaurants = async (req, res) => {
   let { page = 1, limit = 0, name, day, hours, minutes } = req.query;
 
+  const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
   const restaurantPipeline = [];
 
   if (name && name !== "") {
@@ -29,8 +31,9 @@ exports.getRestaurants = async (req, res) => {
         },
       },
     });
-    restaurantPipeline.push({
-      $match: {
+
+    const checkTimePipeLine = [
+      {
         $and: [
           {
             $or: [
@@ -52,18 +55,69 @@ exports.getRestaurants = async (req, res) => {
                   { "desiredDays.endMinutes": { $gte: minutes } },
                 ],
               },
+              {
+                $expr: {
+                  $lt: ["$desiredDays.endHours", "$desiredDays.startHours"],
+                },
+              },
             ],
           },
         ],
+      },
+    ];
+
+    if (hours < 12) {
+      const currentDayIndex = days.indexOf(day);
+      const requiredIndex =
+        currentDayIndex === 0 ? days.length - 1 : currentDayIndex - 1;
+      const prevDay = days[requiredIndex];
+
+      restaurantPipeline.push({
+        $addFields: {
+          prevDesiredDays: {
+            $filter: {
+              input: "$schedule",
+              as: "item",
+              cond: { $eq: ["$$item.day", prevDay] },
+            },
+          },
+        },
+      });
+
+      checkTimePipeLine.push({
+        $and: [
+          {
+            $or: [
+              { "prevDesiredDays.endHours": { $gt: hours } },
+              {
+                $and: [
+                  { "prevDesiredDays.endHours": { $eq: hours } },
+                  { "prevDesiredDays.endMinutes": { $gte: minutes } },
+                ],
+              },
+            ],
+          },
+          {
+            $expr: {
+              $lt: ["$prevDesiredDays.endHours", "$prevDesiredDays.startHours"],
+            },
+          },
+        ],
+      });
+    }
+
+    restaurantPipeline.push({
+      $match: {
+        $or: checkTimePipeLine,
       },
     });
   }
 
   // if (
-  //   (hour > existingStartingHour ||
-  //     (hour === existingStartingHour && minute >= existingStartingMinute)) &&
-  //   (hour < existingEndingHour ||
-  //     (hour === existingEndingHour && minute <= existingEndingMinute))
+  //   (hour < existingStartingHour ||
+  //     (existingStartingHour === hour && existingStartingMinute <= minute)) &&
+  //   (existingEndingHour > hour   ||
+  //     (existingEndingHour === hour  &&  existingEndingMinute >= minute))
   // ) {
   // }
 
@@ -106,7 +160,7 @@ exports.getRestaurants = async (req, res) => {
     data: {
       restaurants,
       totalRestaurants: restaurantsCountNumber,
-      currentPage: parseInt(page),
+      page: parseInt(page),
     },
   };
   sendSuccessResponse(responseData, res);
@@ -122,7 +176,6 @@ exports.createRestaurant = async (req, res) => {
       flag: statusCodes.UNPROCESSABLE_ENTITY,
       message: req.__("GENERAL.INVALID_INPUT"),
     };
-    console.log("error", error);
     return sendErrorResponse(responseData, res);
   }
 

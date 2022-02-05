@@ -45,13 +45,12 @@ exports.userSignup = async (req, res, next) => {
       flag: statusCodes.UNPROCESSABLE_ENTITY,
       message: req.__("GENERAL.INVALID_INPUT"),
     };
-    console.log("dfwefwe", error);
     return sendErrorResponse(responseData, res);
   }
 
-  const newUser = await User.findOne({ email });
+  const oldUser = await User.findOne({ email });
 
-  if (newUser) {
+  if (oldUser) {
     const responseData = {
       flag: statusCodes.NOT_ACCEPTABLE,
       message: req.__("GENERAL.EMAIL_EXISTS"),

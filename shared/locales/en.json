@@ -24,5 +24,14 @@
   "USER.UPDATED": "User Details Updated",
 
   "RESTAURANT.CREATED": "Restaurant Created Successfully",
-  "RESTAURANT.NOT_FOUND": "Restaurant Not Found"
+  "RESTAURANT.NOT_FOUND": "Restaurant Not Found",
+
+  "COLLECTION.CREATED": "Collection Created Successfully",
+  "COLLECTION.NOT_FOUND": "Collection Not Found",
+  "COLLECTION.UPDATED": "Collection Updated Successfully",
+  "COLLECTION.DELETED": "Collection Deleted Successfully",
+
+  "RESTAURANT.SAVED": "Restaurant Saved Successfully",
+  "SAVED_RESTAURANT.DELETED": "Restaurant Removed Successfully",
+  "RESTAURANT.ARLEADY_SAVED": "Restaurant already saved"
 }
