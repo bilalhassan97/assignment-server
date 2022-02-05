@@ -21,5 +21,8 @@
   "USER.INVALID_EMAIL": "Invalid email address",
   "USER.DELETED": "User deleted successfully",
   "USER.CHANGED": "Your profile has been updated",
-  "USER.UPDATED": "User Details Updated"
+  "USER.UPDATED": "User Details Updated",
+
+  "RESTAURANT.CREATED": "Restaurant Created Successfully",
+  "RESTAURANT.NOT_FOUND": "Restaurant Not Found"
 }
