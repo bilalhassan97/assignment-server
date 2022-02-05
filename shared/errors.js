@@ -39,25 +39,6 @@ const errorHandler = (error, req, res, next) => {
       break;
   }
 
-  const STRIPE_ERROR_TYPES = [
-    "StripeCardError",
-    "StripeRateLimitError",
-    "StripeInvalidRequestError",
-    "StripeAPIError",
-    "StripeConnectionError",
-    "StripeAuthenticationError",
-  ];
-
-  if (error.type && error.type.includes(STRIPE_ERROR_TYPES)) {
-    const errorMessage = error.message + " (" + error.param + ")";
-    console.log("Stripe Error = > ", errorMessage);
-    const responseData = {
-      message: errorMessage,
-      flag: error.statusCode,
-    };
-    return sendErrorResponse(responseData, res);
-  }
-
   if (error.errors && error.errors.email) {
     const responseData = {
       flag: statusCodes.NOT_ACCEPTABLE,

@@ -20,7 +20,6 @@ const decodeToken = async (token) => {
 };
 
 module.exports = {
-  // verifyAccessToken,
   generateToken,
   decodeToken,
 };
