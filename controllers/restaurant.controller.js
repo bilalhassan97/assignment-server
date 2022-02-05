@@ -113,14 +113,6 @@ exports.getRestaurants = async (req, res) => {
     });
   }
 
-  // if (
-  //   (hour < existingStartingHour ||
-  //     (existingStartingHour === hour && existingStartingMinute <= minute)) &&
-  //   (existingEndingHour > hour   ||
-  //     (existingEndingHour === hour  &&  existingEndingMinute >= minute))
-  // ) {
-  // }
-
   const stage2Pipeline = [];
   if (limit != 0) {
     stage2Pipeline.push(
